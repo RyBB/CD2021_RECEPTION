@@ -15,7 +15,7 @@
     </div>
     <div class="image">
       <a href="/"
-        ><div class="title">kinto<span id="neon">NE ON</span>games</div></a
+        ><div class="title">kintoe <span id="neon">GAME</span> Labo</div></a
       >
     </div>
   </div>
