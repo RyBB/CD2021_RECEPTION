@@ -10,16 +10,19 @@ const routes = [
     path: "/",
     name: "index",
     component: Index,
+    meta: { title: "kintone GAME Labo" },
   },
   {
     path: "/signup",
     name: "signup",
     component: Signup,
+    meta: { title: "kintone GAME Labo" },
   },
   {
     path: "/qrcode",
     name: "qrcode",
     component: QRcode,
+    meta: { title: "kintone GAME Labo" },
   },
 ];
 
