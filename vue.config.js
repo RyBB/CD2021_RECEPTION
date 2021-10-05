@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: "/github-pages-example-with-vue-router",
+  publicPath: "/CD2021_RECEPTION",
   outputDir: "docs",
   filenameHashing: false,
   productionSourceMap: false,
