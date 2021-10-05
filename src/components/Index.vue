@@ -42,6 +42,11 @@ export default {
 </script>
 
 <style lang="scss">
+@font-face {
+  font-family: "Lampoon";
+  src: url("https://dl.dropboxusercontent.com/s/bwd12plqnednghi/lampoon.ttf");
+}
+
 .cd2021-bb-body {
   background-color: #000;
   height: 100vh;
@@ -49,6 +54,7 @@ export default {
 }
 .cd2021-bb-btn {
   position: relative;
+  font-size: 5rem;
   margin: 100px 0 50px 0;
   padding: 50px 0;
   color: #03e9f4;

@@ -2,7 +2,7 @@
   <div class="header-contents">
     <div class="top">
       <div class="logo cursor">
-        <a href="/">☁ kintone</a>
+        <a href="/CD2021_RECEPTION">☁ kintone</a>
       </div>
     </div>
     <div class="menu">
@@ -14,8 +14,8 @@
       </div>
     </div>
     <div class="image">
-      <a href="/"
-        ><div class="title">kintoe <span id="neon">GAME</span> Labo</div></a
+      <a href="/CD2021_RECEPTION"
+        ><div class="title">kintone <span id="neon">GAME</span> Labo</div></a
       >
     </div>
   </div>
@@ -27,6 +27,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+
 a {
   text-decoration: none;
   color: #000;
@@ -59,9 +61,10 @@ a {
   }
   .title {
     padding: 13px 0 0 30px;
-    font-size: 1.3em;
+    font-size: 5rem;
     color: rgb(255, 0, 238);
-    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-family: "Exo 2", sans-serif;
     text-shadow: 5px 3px 10px rgb(235, 146, 255);
   }
 }

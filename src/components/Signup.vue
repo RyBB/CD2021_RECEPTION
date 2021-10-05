@@ -1,8 +1,14 @@
 <template>
   <div class="signup">
-    <label>User Name</label>
-    <input v-model="name" placeholder="BB" />
-    <div @click="signup(name)">sign up</div>
+    <div class="signup-button">
+      <label>User Name</label>
+      <input v-model="name" />
+      <div @click="signup(name)">sign up</div>
+    </div>
+    <div class="signup-yourid" v-if="isShownId">
+      あなたのIDは<span class="your-id">{{ id }}</span
+      >です
+    </div>
   </div>
 </template>
 <script>
@@ -11,6 +17,8 @@ export default {
   data() {
     return {
       name: "",
+      id: "",
+      isShownId: false,
     };
   },
   methods: {
@@ -21,9 +29,26 @@ export default {
           duration: 2000,
           fullWidth: true,
         });
-      } else {
-        alert("post");
+        return;
       }
+      return fetch(
+        "https://xnbcsb3sp4.execute-api.ap-northeast-1.amazonaws.com/dev/bb-api/cd2021-signup",
+        {
+          method: "POST",
+          mode: "cors",
+          credentials: "same-origin",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name }), // 本文のデータ型は "Content-Type" ヘッダーと一致する必要があります
+        }
+      )
+        .then((resp) => resp.json())
+        .then((res) => {
+          this.isShownId = true;
+          this.id = res.id;
+        })
+        .catch((err) => console.error(err));
     },
   },
 };
@@ -41,7 +66,7 @@ export default {
   --neon-border-color: #08f;
 }
 
-.signup {
+.signup-button {
   display: flex;
   font-family: "Exo 2", sans-serif;
   justify-content: center;
@@ -123,6 +148,17 @@ export default {
       width: 50vw;
       margin: 0 auto;
     }
+  }
+}
+
+.signup-yourid {
+  font-size: 3rem;
+  text-align: center;
+  color: rgb(0, 255, 213);
+  .your-id {
+    font-size: 5rem;
+    margin: 0 1rem;
+    color: rgb(247, 0, 255);
   }
 }
 </style>
