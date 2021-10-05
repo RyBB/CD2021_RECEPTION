@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: "/github-pages-cd2021",
+  publicPath: "",
   outputDir: "docs",
   filenameHashing: false,
   productionSourceMap: false,
