@@ -1,21 +1,42 @@
 <template>
   <div class="cd2021-bb-qrcode">
-    <input v-model="message" placeholder="あなたの番号を入力してください" />
-    <button @click="showQR(message)">表示</button>
-    <div>
+    <div class="back"><a href="/CD2021_RECEPTION">back </a></div>
+    <div class="cd2021-bb-qrcode-form">
+      <input v-model="id" placeholder="ID" />
+      <div class="cd2021-bb-button" @click="showQR(id)">QR Code</div>
       <canvas id="canvas"></canvas>
     </div>
   </div>
 </template>
+
 <script>
 import QRCode from "qrcode";
 export default {
   name: "cd2021-bb-qrcode",
+  data() {
+    return {
+      id: "",
+      placeholder: "IDを入力してください",
+    };
+  },
+  mounted() {
+    this.id = sessionStorage.getItem("id");
+    console.log(this.id);
+    if (!this.id) return;
+    this.showQR(this.id);
+  },
   methods: {
     showQR(number) {
-      if (!number) return;
-      console.log(number);
-      var canvas = document.getElementById("canvas");
+      if (!number) {
+        this.$toasted.error("IDを入力してください", {
+          position: "bottom-right",
+          duration: 2000,
+          fullWidth: true,
+        });
+        return;
+      }
+      sessionStorage.setItem("id", number);
+      const canvas = document.getElementById("canvas");
       return new Promise((res, rej) =>
         QRCode.toCanvas(
           canvas,
@@ -33,20 +54,43 @@ export default {
 
 <style lang="scss">
 .cd2021-bb-qrcode {
-  text-align: center;
-  margin: 100px 0 0 0;
+  color: var(--main-color);
+  filter: hue-rotate(90deg);
+}
+
+.cd2021-bb-qrcode-form {
+  display: flex;
+  font-family: "Exo 2", sans-serif;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  font-size: 3rem;
   input {
-    width: 300px;
-    font-size: 16px;
+    color: #fff;
+    font-size: 3rem;
+    width: 30vw;
+    text-align: center;
     border: none;
     background-color: #000;
-    color: #03e9f4;
-    border-bottom: 1px solid #03e9f4; /*text3の下線*/
+    border-bottom: 1px solid var(--main-color);
     outline: none;
     padding-bottom: 8px;
+    margin: 0 2rem;
   }
-  div {
-    margin: 100px 0 0 0;
+}
+@media (max-width: 767px) {
+  .cd2021-bb-qrcode-form {
+    flex-flow: column;
+    text-align: center;
+    input {
+      font-size: 3rem;
+      height: 4.5rem;
+      width: 50vw;
+      margin: 5rem;
+    }
+    canvas {
+      margin: 5rem 0 0 0;
+    }
   }
 }
 </style>

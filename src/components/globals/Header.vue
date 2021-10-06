@@ -46,7 +46,7 @@ a {
     font-weight: bold;
   }
   .menu {
-    height: 40px;
+    height: 30px;
     background-color: #4b4b4b;
     .icon {
       margin: 0 10px;
@@ -55,13 +55,13 @@ a {
   .image {
     display: flex;
     font-size: 25px;
-    height: 100px;
+    height: 50px;
     align-items: center;
     background-image: url("https://p4.wallpaperbetter.com/wallpaper/586/620/26/cyberpunk-city-future-tokyo-artur-sadlos-future-tokyo-hd-wallpaper-preview.jpg");
   }
   .title {
-    padding: 13px 0 0 30px;
-    font-size: 5rem;
+    padding: 0 30px;
+    font-size: calc(min(5vw, 5rem));
     color: rgb(255, 0, 238);
     font-weight: bold;
     font-family: "Exo 2", sans-serif;

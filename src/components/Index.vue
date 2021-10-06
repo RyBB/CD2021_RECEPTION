@@ -54,10 +54,11 @@ export default {
 }
 .cd2021-bb-btn {
   position: relative;
-  font-size: 5rem;
+  font-family: "lampoon";
+  font-size: calc(min(5vw, 5rem));
   margin: 100px 0 50px 0;
   padding: 50px 0;
-  color: #03e9f4;
+  color: var(--main-color);
   text-decoration: none;
   text-transform: uppercase;
   transition: 0.5s;
@@ -65,23 +66,23 @@ export default {
   overflow: hidden;
   cursor: pointer;
   &:hover {
-    background: #03e9f4;
+    background: var(--main-color);
     color: #050801;
-    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
-      0 0 200px #03e9f4;
+    box-shadow: 0 0 5px var(--main-color), 0 0 25px var(--main-color),
+      0 0 50px var(--main-color), 0 0 200px var(--main-color);
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
   }
   &:nth-child(1) {
-    filter: hue-rotate(180deg);
-  }
-  router-link:nth-child(2) {
-    filter: hue-rotate(270deg);
-  }
-  &:nth-child(3) {
     filter: hue-rotate(0);
   }
-  &:nth-child(3) {
+  &:nth-child(2) {
     filter: hue-rotate(90deg);
+  }
+  &:nth-child(3) {
+    filter: hue-rotate(180deg);
+  }
+  &:nth-child(4) {
+    filter: hue-rotate(270deg);
   }
   span {
     position: absolute;
@@ -91,7 +92,7 @@ export default {
       left: 0;
       width: 100%;
       height: 2px;
-      background: linear-gradient(90deg, transparent, #03e9f4);
+      background: linear-gradient(90deg, transparent, var(--main-color));
       animation: animate1 2s linear infinite;
     }
     &:nth-child(3) {
@@ -99,7 +100,7 @@ export default {
       right: 0;
       width: 100%;
       height: 2px;
-      background: linear-gradient(270deg, transparent, #03e9f4);
+      background: linear-gradient(270deg, transparent, var(--main-color));
       animation: animate2 2s linear infinite;
     }
   }
