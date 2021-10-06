@@ -2,8 +2,11 @@
   <div class="cd2021-bb-qrcode">
     <div class="back"><a href="/CD2021_RECEPTION">back </a></div>
     <div class="cd2021-bb-qrcode-form">
+      <label>Your ID</label>
       <input v-model="id" placeholder="ID" />
       <div class="cd2021-bb-button" @click="showQR(id)">QR Code</div>
+    </div>
+    <div class="cd2021-bb-canvas">
       <canvas id="canvas"></canvas>
     </div>
   </div>
@@ -35,7 +38,11 @@ export default {
         });
         return;
       }
+
+      // セッションストレージに保存
       sessionStorage.setItem("id", number);
+
+      // QRコードの描画
       const canvas = document.getElementById("canvas");
       return new Promise((res, rej) =>
         QRCode.toCanvas(
@@ -78,6 +85,10 @@ export default {
     margin: 0 2rem;
   }
 }
+.cd2021-bb-canvas {
+  text-align: center;
+}
+
 @media (max-width: 767px) {
   .cd2021-bb-qrcode-form {
     flex-flow: column;
@@ -88,9 +99,10 @@ export default {
       width: 50vw;
       margin: 5rem;
     }
-    canvas {
-      margin: 5rem 0 0 0;
-    }
+  }
+  .cd2021-bb-canvas {
+    text-align: center;
+    margin: 5rem 0 0 0;
   }
 }
 </style>

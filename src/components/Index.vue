@@ -55,8 +55,8 @@ export default {
 .cd2021-bb-btn {
   position: relative;
   font-family: "lampoon";
-  font-size: calc(min(5vw, 5rem));
-  margin: 100px 0 50px 0;
+  font-size: calc(min(8vw, 5rem));
+  margin: 50px 0 50px 0;
   padding: 50px 0;
   color: var(--main-color);
   text-decoration: none;

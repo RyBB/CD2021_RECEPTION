@@ -49,6 +49,9 @@ export default {
         .then((res) => {
           this.isShownId = true;
           this.id = res.id;
+
+          // セッションストレージに保存
+          sessionStorage.setItem("id", res.id);
         })
         .catch((err) => console.error(err));
     },
@@ -96,6 +99,7 @@ export default {
 }
 
 .cd2021-bb-signup-yourid {
+  margin: 50px 0 0 0;
   font-size: 3rem;
   text-align: center;
   .your-id {

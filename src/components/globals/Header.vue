@@ -61,7 +61,7 @@ a {
   }
   .title {
     padding: 0 30px;
-    font-size: calc(min(5vw, 5rem));
+    font-size: calc(min(5vw, 3rem));
     color: rgb(255, 0, 238);
     font-weight: bold;
     font-family: "Exo 2", sans-serif;
