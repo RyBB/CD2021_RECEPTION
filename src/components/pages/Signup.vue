@@ -34,7 +34,7 @@ export default {
         return;
       }
       return fetch(
-        "https://xnbcsb3sp4.execute-api.ap-northeast-1.amazonaws.com/dev/bb-api/cd2021-signup",
+        "https://t3k8cgtf7h.execute-api.ap-northeast-1.amazonaws.com/dev/bb-api/cd2021-signup",
         {
           method: "POST",
           mode: "cors",

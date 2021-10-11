@@ -22,6 +22,10 @@ export default {
 // 全体共有の変数
 :root {
   --main-color: #03e9f4;
+  --main-color1: #00ffff;
+  --main-color2: #ff00ff;
+  --main-color3: #ffff00;
+  --main-color4: #00ff00;
 
   /* Base font size */
   font-size: 10px;
@@ -31,15 +35,25 @@ export default {
   --neon-border-color: #08f;
 }
 
-.back a {
-  margin: 1rem;
-  font-size: 2rem;
-  color: lightpink;
-  cursor: pointer;
+.back {
+  text-align: center;
+  margin: 1rem 2rem;
+  font-size: calc(max(1.5vw, 1.5rem));
+  width: 5rem;
+  a {
+    color: #fff;
+    cursor: pointer;
+    border-bottom: 1px solid #fff;
+    &:hover {
+      color: var(--main-color);
+      border-bottom: 1px solid var(--main-color);
+    }
+  }
 }
 
 body {
   margin: 0;
+  background-color: #000;
 }
 #app {
   color: #2c3e50;
@@ -51,6 +65,7 @@ body {
 .cd2021-bb-button {
   font-style: italic;
   color: #fff;
+  font-size: 2rem;
   padding: 1rem 1rem 1rem;
   border: 0.2rem solid #fff;
   border-radius: 1rem;

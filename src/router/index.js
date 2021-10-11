@@ -1,8 +1,11 @@
 import VueRouter from "vue-router";
 import Vue from "vue";
 import Index from "@/components/Index";
-import Signup from "@/components/Signup";
-import QRcode from "@/components/QRcode";
+import Signup from "@/components/pages/Signup";
+import QRcode from "@/components/pages/QRcode";
+import Mypage from "@/components/pages/Mypage";
+import Ranking from "@/components/pages/Ranking";
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -22,6 +25,18 @@ const routes = [
     path: "/qrcode",
     name: "qrcode",
     component: QRcode,
+    meta: { title: "kintone GAME Labo" },
+  },
+  {
+    path: "/mypage",
+    name: "mypage",
+    component: Mypage,
+    meta: { title: "kintone GAME Labo" },
+  },
+  {
+    path: "/ranking",
+    name: "ranking",
+    component: Ranking,
     meta: { title: "kintone GAME Labo" },
   },
 ];
