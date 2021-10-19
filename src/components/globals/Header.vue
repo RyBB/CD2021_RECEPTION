@@ -2,7 +2,9 @@
   <div class="header-contents">
     <div class="top">
       <div class="logo cursor">
-        <a href="/CD2021_RECEPTION">☁ kintone</a>
+        <a href="/CD2021_RECEPTION">
+          <img class="header-logo" src="./kintone_logo_black.png"
+        /></a>
       </div>
     </div>
     <div class="menu">
@@ -67,6 +69,9 @@ a {
     font-family: "Exo 2", sans-serif;
     text-shadow: 5px 3px 10px rgb(235, 146, 255);
   }
+}
+.header-logo {
+  width: 15rem;
 }
 #neon {
   color: rgb(30, 214, 255);
