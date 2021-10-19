@@ -71,7 +71,8 @@ a {
   }
 }
 .header-logo {
-  width: 15rem;
+  width: 13rem;
+  margin: 0.3rem 0 0 0;
 }
 #neon {
   color: rgb(30, 214, 255);
