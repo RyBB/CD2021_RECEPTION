@@ -57,7 +57,7 @@ body {
   text-align: left;
   background-color: #000;
   height: 100vh;
-  // font-family: "Lancip";
+  font-family: system-ui;
 }
 .cd2021-bb-button {
   font-style: italic;
