@@ -116,12 +116,13 @@ export default {
 .cd2021-bb-ranking-data {
   filter: hue-rotate(270deg);
   display: flex;
-  justify-content: end;
-  flex-flow: column;
-  text-align: center;
+  justify-content: center;
   align-items: center;
   min-height: 10vh;
-  font-size: calc(max(30px, 3vw));
+  font-size: 3rem;
+  flex-flow: column;
+  text-align: center;
+  // font-size: calc(max(30px, 3vw));
 }
 .cd2021-bb-ranking-data-menu {
   ul {
