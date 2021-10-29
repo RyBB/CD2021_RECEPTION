@@ -3,6 +3,8 @@
     <div class="back"><a href="/CD2021_RECEPTION">back </a></div>
     <div class="cd2021-bb-ranking-data">
       <div>score ranking</div>
+    </div>
+    <div class="cd2021-bb-ranking-data-menu">
       <ul class="">
         <li @click="activate(0)" :class="{ active: isActive === '0' }">
           total
@@ -26,7 +28,7 @@
           <th>SCORE</th>
         </tr>
         <tr v-for="row in selectedRanking" :key="row.index">
-          <td :class="setStyle">{{ row.rank }}</td>
+          <td class="cd2021-bb-ranking-table-main-rank">{{ row.rank }}</td>
           <td class="cd2021-bb-ranking-table-main-user">{{ row.user }}</td>
           <td class="cd2021-bb-ranking-table-main-score">{{ row.score }}</td>
         </tr>
@@ -109,14 +111,19 @@ export default {
 <style lang="scss" scoped>
 .cd2021-bb-ranking {
   color: var(--main-color);
-  // filter: hue-rotate(270deg);
 }
 
 .cd2021-bb-ranking-data {
   filter: hue-rotate(270deg);
+  display: flex;
+  justify-content: end;
+  flex-flow: column;
   text-align: center;
-  font-size: calc(max(4vw, 2rem));
-  text-transform: uppercase;
+  align-items: center;
+  min-height: 10vh;
+  font-size: calc(max(30px, 3vw));
+}
+.cd2021-bb-ranking-data-menu {
   ul {
     margin: 10vw 0;
     padding: 0;
@@ -125,7 +132,8 @@ export default {
     justify-content: center;
     list-style-type: none;
     li {
-      width: calc(min(20vw, 500px));
+      text-align: center;
+      width: 25vw;
       cursor: pointer;
       &:nth-child(2) {
         filter: hue-rotate(90deg);
@@ -160,18 +168,13 @@ export default {
   font-size: 1.2em;
 }
 .cd2021-bb-ranking-table-main-rank {
-  color: #ffbf00;
+  font-family: "roboto";
 }
 .cd2021-bb-ranking-table-main-user {
   width: 60vw;
+  font-family: "roboto";
 }
 .cd2021-bb-ranking-table-main-score {
+  font-family: "roboto";
 }
-// @media (max-width: 767px) {
-//   .cd2021-bb-ranking-data {
-//     ul {
-//       font-size: 2rem;
-//     }
-//   }
-// }
 </style>

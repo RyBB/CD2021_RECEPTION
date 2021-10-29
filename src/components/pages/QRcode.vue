@@ -67,7 +67,6 @@ export default {
 
 .cd2021-bb-qrcode-form {
   display: flex;
-  font-family: "Exo 2", sans-serif;
   justify-content: center;
   align-items: center;
   min-height: 30vh;

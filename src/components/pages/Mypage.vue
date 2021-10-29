@@ -146,7 +146,6 @@ export default {
 
 .cd2021-bb-mypage-form {
   display: flex;
-  font-family: "Exo 2", sans-serif;
   justify-content: center;
   align-items: center;
   min-height: 30vh;
@@ -166,18 +165,19 @@ export default {
 }
 .cd2021-bb-mypage-player {
   text-align: center;
-  font-size: calc(max(4vw, 2rem));
-  color: #ffbf00;
+  font-size: calc(max(50px, 3rem));
+  color: #fff;
+  text-shadow: 3px 2px 1px rgb(0, 132, 255);
   label {
     font-size: 0.6em;
-    margin: 0 0 0 -10vw;
+    margin: 0 0 0 -5vw;
   }
 }
 .cd2021-bb-mypage-highscore {
   text-align: center;
-  font-size: calc(max(4vw, 2rem));
+  font-size: calc(max(30px, 3vw));
   div {
-    margin: 5% 0 0 0;
+    margin: 10% 0 0 0;
   }
   dl {
     display: flex;
@@ -203,14 +203,13 @@ export default {
 }
 .cd2021-bb-mypage-record {
   text-align: center;
-  font-size: calc(max(3vw, 1rem));
+  font-size: calc(max(25px, 2.5vw));
   margin: 5rem 0 0 0;
   table {
     margin: 0 auto;
     width: 100vw;
     tr {
       width: 100%;
-      font-size: 0.8em;
       th {
         color: #fff;
         text-shadow: 3px 2px 1px rgb(0, 132, 255);
@@ -221,7 +220,7 @@ export default {
         padding: 10px;
         margin: 0;
         color: #fff;
-        font-size: unquote("min(4vw, 30px)");
+        font-size: 0.8em;
       }
     }
   }
@@ -236,10 +235,6 @@ export default {
       width: 50vw;
       margin: 5rem;
     }
-  }
-  .cd2021-bb-canvas {
-    text-align: center;
-    margin: 5rem 0 0 0;
   }
   .cd2021-bb-mypage-highscore {
     div {

@@ -7,7 +7,7 @@
       <div class="cd2021-bb-button" @click="signup(name)">sign up</div>
     </div>
     <div class="cd2021-bb-signup-yourid" v-if="isShownId">
-      {{ name }} さんのIDは<span class="your-id">{{ id }}</span
+      {{ name }} さんの ID は<span class="your-id">{{ id }}</span
       >です
     </div>
   </div>

@@ -1,27 +1,19 @@
 @font-face {
-  font-family: "Lampoon";
-  src: url("~@/assets/lampoon.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Lancip";
-  src: url("~@/assets/lancip.ttf") format("truetype");
-}
-
-@font-face {
   font-family: "suggested";
-  src: url("~@/assets/suggested.italic.ttf") format("truetype");
+  src: url("~@/assets/fonts/suggested.regular.ttf") format("truetype");
 }
-@font-face {
-  font-family: "valorant";
-  src: url("~@/assets/ValorantFont.ttf") format("truetype");
-}
+
 @font-face {
   font-family: "cyberpunk";
-  src: url("~@/assets/Cyberpunks.ttf") format("truetype");
+  src: url("~@/assets/fonts/Cyberpunks.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "spyagency";
-  src: url("~@/assets/spyagency3_2.ttf") format("truetype");
+  src: url("~@/assets/fonts/spyagency3_2.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("~@/assets/fonts/roboto.bold.ttf") format("truetype");
 }
