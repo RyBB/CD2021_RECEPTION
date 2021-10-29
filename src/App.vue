@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss">
 @import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
-@import url(https://dl.dropboxusercontent.com/s/bwd12plqnednghi/lampoon.ttf);
+@import url(./lampoon.ttf);
 
 // 全体共有の変数
 :root {

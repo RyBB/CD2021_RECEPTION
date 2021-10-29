@@ -59,7 +59,7 @@ a {
     font-size: 25px;
     height: 50px;
     align-items: center;
-    background-image: url("https://p4.wallpaperbetter.com/wallpaper/586/620/26/cyberpunk-city-future-tokyo-artur-sadlos-future-tokyo-hd-wallpaper-preview.jpg");
+    background-image: url("header-image.png");
   }
   .title {
     padding: 0 30px;
