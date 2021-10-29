@@ -1,6 +1,6 @@
 <template>
   <div class="cd2021-bb-body">
-    <div class="cd2021-bb-btn" @click="router('/signup')">
+    <div class="cd2021-bb-btn" @click="router('/entry')">
       <span></span>
       <span></span>
       <span></span>
