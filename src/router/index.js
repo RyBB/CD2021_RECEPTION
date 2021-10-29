@@ -41,27 +41,27 @@ const routes = [
   },
 ];
 
-const scrollBehavior = (to, from, savedPosition) => {
-  if (savedPosition) {
-    // savedPosition is only available for popstate navigations.
-    return savedPosition;
-  } else {
-    const position = {};
-    // new navigation.
-    // scroll to anchor by returning the selector
-    if (to.hash) {
-      position.selector = to.hash;
-    } else {
-      position.x = 0;
-      position.y = 0;
-    }
-    return position;
-  }
-};
+// const scrollBehavior = (to, from, savedPosition) => {
+//   if (savedPosition) {
+//     // savedPosition is only available for popstate navigations.
+//     return savedPosition;
+//   } else {
+//     const position = {};
+//     // new navigation.
+//     // scroll to anchor by returning the selector
+//     if (to.hash) {
+//       position.selector = to.hash;
+//     } else {
+//       position.x = 0;
+//       position.y = 0;
+//     }
+//     return position;
+//   }
+// };
 var router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  scrollBehavior,
+  // scrollBehavior,
   routes,
   linkActiveClass: "active",
 });
