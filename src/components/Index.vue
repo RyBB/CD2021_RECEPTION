@@ -44,7 +44,7 @@ export default {
 <style lang="scss">
 @font-face {
   font-family: "Lampoon";
-  src: url("./lampoon.ttf");
+  src: url("lampoon.ttf");
 }
 
 .cd2021-bb-body {
