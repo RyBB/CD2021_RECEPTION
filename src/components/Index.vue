@@ -49,7 +49,7 @@ export default {
 }
 .cd2021-bb-btn {
   position: relative;
-  font-family: "lampoon";
+  font-family: "suggested";
   font-size: calc(min(8vw, 5rem));
   margin: 5vh 0;
   padding: 5vh 0;
