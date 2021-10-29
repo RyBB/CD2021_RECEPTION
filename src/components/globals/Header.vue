@@ -66,6 +66,7 @@ a {
     font-size: calc(min(5vw, 3rem));
     color: rgb(255, 0, 238);
     font-weight: bold;
+    font-family: lancip;
     text-shadow: 5px 3px 10px rgb(235, 146, 255);
   }
 }
