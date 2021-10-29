@@ -157,25 +157,31 @@ export default {
 }
 .cd2021-bb-ranking-table-main {
   text-align: center;
-  font-size: calc(max(2vw, 25px));
+  font-size: calc(max(3vw, 15px));
   color: #fff;
   table {
     margin: auto;
+    .cd2021-bb-ranking-table-main-header {
+      color: #ffbf00;
+      font-size: 1.2em;
+    }
+    .cd2021-bb-ranking-table-main-rank {
+      font-family: "roboto";
+    }
+    .cd2021-bb-ranking-table-main-user {
+      width: 50vw;
+      font-family: "roboto";
+    }
+    .cd2021-bb-ranking-table-main-score {
+      font-family: "roboto";
+    }
   }
 }
-.cd2021-bb-ranking-table-main-header {
-  color: #ffbf00;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-.cd2021-bb-ranking-table-main-rank {
-  font-family: "roboto";
-}
-.cd2021-bb-ranking-table-main-user {
-  width: 60vw;
-  font-family: "roboto";
-}
-.cd2021-bb-ranking-table-main-score {
-  font-family: "roboto";
+@media (max-width: 767px) {
+  .cd2021-bb-ranking-data-menu {
+    ul {
+      font-size: 1.5rem;
+    }
+  }
 }
 </style>

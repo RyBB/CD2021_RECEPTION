@@ -216,11 +216,11 @@ export default {
       }
       th,
       td {
-        width: calc(100vw / 3);
+        width: calc(100vw);
         padding: 10px;
         margin: 0;
         color: #fff;
-        font-size: 0.8em;
+        font-size: 0.6em;
       }
     }
   }
@@ -243,6 +243,9 @@ export default {
     dl {
       flex-flow: column;
     }
+  }
+  .cd2021-bb-mypage-player {
+    margin: 15% 0 0 0;
   }
 }
 </style>
