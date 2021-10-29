@@ -165,7 +165,7 @@ export default {
 .cd2021-bb-ranking-table-main-header {
   color: #ffbf00;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 .cd2021-bb-ranking-table-main-rank {
   font-family: "roboto";
