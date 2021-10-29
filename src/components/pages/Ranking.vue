@@ -1,6 +1,9 @@
 <template>
   <div class="cd2021-bb-ranking">
-    <div class="back"><a href="/CD2021_RECEPTION">back </a></div>
+    <div class="back">
+      <a href="/CD2021_RECEPTION">back </a>
+    </div>
+    <div class="cd2021-bb-ranking-timestamp">updated_at {{ timestamp }}</div>
     <div class="cd2021-bb-ranking-data">
       <div>score ranking</div>
     </div>
@@ -46,6 +49,7 @@ export default {
     return {
       isActive: "0",
       isShownRanking: false,
+      timestamp: "",
       rankingAllData: [],
       selectedRanking: [],
     };
@@ -56,6 +60,7 @@ export default {
         "https://t3k8cgtf7h.execute-api.ap-northeast-1.amazonaws.com/dev/bb-api/cd2021-ranking2"
       );
       const { body } = await data.json();
+      this.timestamp = body.Item.timestamp.S;
       const records = JSON.parse(body.Item.records.S);
       this.isShownRanking = true;
       this.rankingAllData = records;
@@ -112,7 +117,11 @@ export default {
 .cd2021-bb-ranking {
   color: var(--main-color);
 }
-
+.cd2021-bb-ranking-timestamp {
+  color: #fff;
+  text-align: right;
+  width: 95vw;
+}
 .cd2021-bb-ranking-data {
   filter: hue-rotate(270deg);
   display: flex;
