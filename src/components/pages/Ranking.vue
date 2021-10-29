@@ -17,36 +17,20 @@
           flying gyoza
         </li>
       </ul>
-      <div class="main">
-        <table>
-          <tr v-for="row in selectedRanking" :key="row.index">
-            <td>{{ row.rank }}</td>
-            <td>{{ row.user }}</td>
-            <td>{{ row.score }}</td>
-          </tr>
-        </table>
-      </div>
-      <!-- <dl>
-          <dt>DARTONE</dt>
-          <dd>{{ score.darts }}</dd>
-          <dt>COMPILE TOWER</dt>
-          <dd>{{ score.tower }}</dd>
-          <dt>FLYING GYOZA</dt>
-          <dd>{{ score.gyoza }}</dd>
-        </dl>
-        <div>YOUR SCORE RECORD</div>
-        <table>
-          <tr>
-            <th>timestamp</th>
-            <th>game</th>
-            <th>score</th>
-          </tr>
-          <tr v-for="row in myScoreRecords" :key="row.id">
-            <td>{{ row.value["登録日時"].value | dayjs }}</td>
-            <td>{{ row.value["ゲーム"].value }}</td>
-            <td>{{ row.value["得点"].value }}</td>
-          </tr>
-        </table> -->
+    </div>
+    <div class="cd2021-bb-ranking-table-main">
+      <table>
+        <tr class="cd2021-bb-ranking-table-main-header" v-if="isShownRanking">
+          <th>RANK</th>
+          <th>NAME</th>
+          <th>SCORE</th>
+        </tr>
+        <tr v-for="row in selectedRanking" :key="row.index">
+          <td :class="setStyle">{{ row.rank }}</td>
+          <td class="cd2021-bb-ranking-table-main-user">{{ row.user }}</td>
+          <td class="cd2021-bb-ranking-table-main-score">{{ row.score }}</td>
+        </tr>
+      </table>
     </div>
   </div>
 </template>
@@ -59,6 +43,7 @@ export default {
   data() {
     return {
       isActive: "0",
+      isShownRanking: false,
       rankingAllData: [],
       selectedRanking: [],
     };
@@ -70,7 +55,7 @@ export default {
       );
       const { body } = await data.json();
       const records = JSON.parse(body.Item.records.S);
-      console.log(records);
+      this.isShownRanking = true;
       this.rankingAllData = records;
       this.showRanking();
     } catch (err) {
@@ -121,25 +106,27 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .cd2021-bb-ranking {
   color: var(--main-color);
-  filter: hue-rotate(270deg);
+  // filter: hue-rotate(270deg);
 }
 
 .cd2021-bb-ranking-data {
+  filter: hue-rotate(270deg);
   text-align: center;
   font-size: calc(max(4vw, 2rem));
   text-transform: uppercase;
   ul {
     margin: 10vw 0;
     padding: 0;
-    font-size: calc(min(2vw, 30px));
+    font-size: calc(max(2.5vw, 2rem));
     display: flex;
     justify-content: center;
     list-style-type: none;
     li {
-      width: calc(min(20vw, 200px));
+      width: calc(min(20vw, 500px));
+      cursor: pointer;
       &:nth-child(2) {
         filter: hue-rotate(90deg);
       }
@@ -151,7 +138,7 @@ export default {
       }
     }
     .active {
-      background: var(--main-color);
+      background-color: var(--main-color);
       color: #050801;
       box-shadow: 0 0 5px var(--main-color), 0 0 25px var(--main-color),
         0 0 50px var(--main-color), 0 0 200px var(--main-color);
@@ -159,11 +146,32 @@ export default {
     }
   }
 }
-@media (max-width: 767px) {
-  .cd2021-bb-ranking-data {
-    ul {
-      font-size: 1.5rem;
-    }
+.cd2021-bb-ranking-table-main {
+  text-align: center;
+  font-size: calc(max(2vw, 25px));
+  color: #fff;
+  table {
+    margin: auto;
   }
 }
+.cd2021-bb-ranking-table-main-header {
+  color: #ffbf00;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.cd2021-bb-ranking-table-main-rank {
+  color: #ffbf00;
+}
+.cd2021-bb-ranking-table-main-user {
+  width: 60vw;
+}
+.cd2021-bb-ranking-table-main-score {
+}
+// @media (max-width: 767px) {
+//   .cd2021-bb-ranking-data {
+//     ul {
+//       font-size: 2rem;
+//     }
+//   }
+// }
 </style>

@@ -7,6 +7,10 @@
       <div class="cd2021-bb-button" @click="showMypage(id)">show My page</div>
     </div>
     <div class="cd2021-bb-mypage-data" v-if="isShowMyPage">
+      <div class="cd2021-bb-mypage-player">
+        <label>プレイヤー名：</label>
+        {{ playerName }}
+      </div>
       <div class="cd2021-bb-mypage-highscore">
         <div>YOUR HIGH SCORE</div>
         <dl>
@@ -49,6 +53,7 @@ export default {
       placeholder: "IDを入力してください",
       isShowMyPage: false,
       isGetData: false,
+      playerName: "",
       score: {
         darts: 0,
         tower: 0,
@@ -59,7 +64,6 @@ export default {
   },
   mounted() {
     this.id = sessionStorage.getItem("id");
-    console.log(this.id);
     if (!this.id) return;
   },
   filters: {
@@ -99,7 +103,7 @@ export default {
       )
         .then((resp) => resp.json())
         .then((res) => {
-          console.log(res.body.recordrd);
+          console.log(res.body);
 
           const record = res.body.record;
           this.isGetData = true;
@@ -118,6 +122,8 @@ export default {
 
           // 該当するレコードがあったら表示
           this.isShowMyPage = true;
+
+          this.playerName = record["ユーザー名"].value;
           this.score = {
             darts: record["最高得点_ダーツ"].value,
             tower: record["最高得点_タワー"].value,
@@ -156,6 +162,15 @@ export default {
     outline: none;
     padding-bottom: 8px;
     margin: 0 2rem;
+  }
+}
+.cd2021-bb-mypage-player {
+  text-align: center;
+  font-size: calc(max(4vw, 2rem));
+  color: #ffbf00;
+  label {
+    font-size: 0.6em;
+    margin: 0 0 0 -10vw;
   }
 }
 .cd2021-bb-mypage-highscore {

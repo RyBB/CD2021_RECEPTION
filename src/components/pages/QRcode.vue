@@ -3,8 +3,8 @@
     <div class="back"><a href="/CD2021_RECEPTION">back </a></div>
     <div class="cd2021-bb-qrcode-form">
       <label>Your ID</label>
-      <input v-model="id" placeholder="ID" />
-      <div class="cd2021-bb-button" @click="showQR(id)">show QR Code</div>
+      <input type="tel" v-model="id" placeholder="ID" @keyup="showQR(id)" />
+      <!-- <div class="cd2021-bb-button" @click="showQR(id)">show QR Code</div> -->
     </div>
     <div class="cd2021-bb-canvas">
       <canvas id="canvas"></canvas>
