@@ -16,7 +16,7 @@ const routes = [
     meta: { title: "kintone GAME Labo" },
   },
   {
-    path: "/signup",
+    path: "/entry",
     name: "signup",
     component: Signup,
     meta: { title: "kintone GAME Labo" },
