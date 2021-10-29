@@ -29,8 +29,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
-
 a {
   text-decoration: none;
   color: #000;
@@ -60,13 +58,14 @@ a {
     height: 50px;
     align-items: center;
     background-image: url("header-image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .title {
     padding: 0 30px;
     font-size: calc(min(5vw, 3rem));
     color: rgb(255, 0, 238);
     font-weight: bold;
-    font-family: "Exo 2", sans-serif;
     text-shadow: 5px 3px 10px rgb(235, 146, 255);
   }
 }

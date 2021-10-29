@@ -42,11 +42,6 @@ export default {
 </script>
 
 <style lang="scss">
-@font-face {
-  font-family: "Lampoon";
-  src: url("lampoon.ttf");
-}
-
 .cd2021-bb-body {
   background-color: #000;
   height: 100vh;

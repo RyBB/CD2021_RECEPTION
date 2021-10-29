@@ -16,9 +16,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
-@import url(lampoon.ttf);
-
 // 全体共有の変数
 :root {
   --main-color: #03e9f4;
@@ -60,7 +57,6 @@ body {
   text-align: left;
   background-color: #000;
   height: 100vh;
-  font-family: "Exo 2", sans-serif;
 }
 .cd2021-bb-button {
   font-style: italic;
