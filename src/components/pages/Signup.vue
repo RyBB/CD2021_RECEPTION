@@ -6,6 +6,9 @@
       <input v-model="name" placeholder="名前" />
       <div class="cd2021-bb-button" @click="signup(name)">sign up</div>
     </div>
+    <div class="cd2021-bb-signup-yourid" v-if="isBeforeShownId">
+      {{ name }} さんの ID は...
+    </div>
     <div class="cd2021-bb-signup-yourid" v-if="isShownId">
       {{ name }} さんの ID は<span class="your-id">{{ id }}</span
       >です
@@ -20,7 +23,9 @@ export default {
     return {
       name: "",
       id: "",
+      isBeforeShownId: false,
       isShownId: false,
+      isSignup: false,
     };
   },
   methods: {
@@ -33,6 +38,18 @@ export default {
         });
         return;
       }
+      if (this.isSignup) {
+        this.$toasted.error(
+          "一度登録されています。再度登録する際は画面をリロードしてください。",
+          {
+            position: "bottom-right",
+            duration: 2000,
+            fullWidth: true,
+          }
+        );
+        return;
+      }
+      this.isBeforeShownId = true;
       return fetch(
         "https://t3k8cgtf7h.execute-api.ap-northeast-1.amazonaws.com/dev/bb-api/cd2021-signup",
         {
@@ -47,9 +64,10 @@ export default {
       )
         .then((resp) => resp.json())
         .then((res) => {
+          this.isBeforeShownId = false;
           this.isShownId = true;
           this.id = res.id;
-
+          this.isSignup = true;
           // セッションストレージに保存
           sessionStorage.setItem("id", res.id);
         })
