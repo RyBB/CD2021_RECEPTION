@@ -51,13 +51,13 @@ export default {
 body {
   margin: 0;
   background-color: #000;
+  font-family: "spyagency";
 }
 #app {
   color: #2c3e50;
   text-align: left;
   background-color: #000;
   height: 100vh;
-  font-family: "spyagency";
 }
 .cd2021-bb-button {
   font-style: italic;
