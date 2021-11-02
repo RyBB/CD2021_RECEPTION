@@ -23,18 +23,31 @@
         </li>
       </ul>
     </div>
-    <div class="cd2021-bb-ranking-table-main">
+    <div id="myTable" class="cd2021-bb-ranking-table-main">
+      <input v-model="search" placeholder="NAME" @input="searchName" />
       <table>
-        <tr class="cd2021-bb-ranking-table-main-header" v-if="isShownRanking">
-          <th>RANK</th>
-          <th>NAME</th>
-          <th>SCORE</th>
-        </tr>
-        <tr v-for="row in selectedRanking" :key="row.index">
-          <td class="cd2021-bb-ranking-table-main-rank">{{ row.rank }}</td>
-          <td class="cd2021-bb-ranking-table-main-user">{{ row.user }}</td>
-          <td class="cd2021-bb-ranking-table-main-score">{{ row.score }}</td>
-        </tr>
+        <tbody class="list">
+          <tr class="cd2021-bb-ranking-table-main-header" v-if="isShownRanking">
+            <th>RANK</th>
+            <th>SCORE</th>
+            <th>ID</th>
+            <th>NAME</th>
+          </tr>
+          <tr v-for="row in seachSelectedRanking" :key="row.index">
+            <td class="rank cd2021-bb-ranking-table-main-rank">
+              {{ row.rank }}
+            </td>
+            <td class="score cd2021-bb-ranking-table-main-score">
+              {{ row.score }}
+            </td>
+            <td class="id cd2021-bb-ranking-table-main-id">
+              {{ row.id }}
+            </td>
+            <td class="user cd2021-bb-ranking-table-main-user">
+              {{ row.user }}
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
@@ -48,10 +61,12 @@ export default {
   data() {
     return {
       isActive: "0",
+      search: "",
       isShownRanking: false,
       timestamp: "",
       rankingAllData: [],
       selectedRanking: [],
+      seachSelectedRanking: [],
     };
   },
   async mounted() {
@@ -94,6 +109,7 @@ export default {
           return {
             score: Number(val[type].value),
             user: val["ユーザー名"].value,
+            id: val["$id"].value,
           };
         })
         .sort((a, b) => (Number(a.score) < Number(b.score) ? 1 : -1))
@@ -108,6 +124,18 @@ export default {
             ...val,
           };
         });
+      this.seachSelectedRanking = this.selectedRanking;
+    },
+    searchName() {
+      let searchWord = this.search.trim();
+      console.log(searchWord);
+      if (!searchWord) {
+        this.seachSelectedRanking = this.selectedRanking;
+      } else {
+        this.seachSelectedRanking = this.selectedRanking.filter((record) =>
+          record.user.includes(searchWord)
+        );
+      }
     },
   },
 };
@@ -168,6 +196,12 @@ export default {
   text-align: center;
   font-size: calc(max(3vw, 15px));
   color: #fff;
+  input {
+    margin: 0 0 5% 0;
+    width: 50vw;
+    height: 3vh;
+    font-size: 2rem;
+  }
   table {
     margin: auto;
     .cd2021-bb-ranking-table-main-header {
@@ -175,10 +209,11 @@ export default {
       font-size: 1.2em;
     }
     .cd2021-bb-ranking-table-main-rank {
+      color: #ffbf00;
       font-family: "roboto";
     }
     .cd2021-bb-ranking-table-main-user {
-      width: 50vw;
+      // width: 50vw;
       font-family: "roboto";
     }
     .cd2021-bb-ranking-table-main-score {
